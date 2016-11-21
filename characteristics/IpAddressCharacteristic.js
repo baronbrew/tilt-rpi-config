@@ -18,12 +18,18 @@ var IpAddressCharacteristic = function () {
 util.inherits(IpAddressCharacteristic, BlenoCharacteristic);
 
 IpAddressCharacteristic.prototype.onReadRequest = function(offset, callback) {
-  var interfaces = JSON.stringify(os.networkInterfaces());
+  var interfaces = os.networkInterfaces();
+  console.dir(interfaces);
   if(interfaces.hasOwnProperty("wlan0")){
     callback(this.RESULT_SUCCESS, new Buffer(os.networkInterfaces().wlan0[0].address));
   }
   else{
-    callback(this.RESULT_SUCCESS, new Buffer(0));
+    if(interfaces.hasOwnProperty("eth0")){
+      callback(this.RESULT_SUCCESS, new Buffer(os.networkInterfaces().eth0[0].address));
+    }
+    else{
+      callback(this.RESULT_SUCCESS, new Buffer("no IP address"));
+    }
   }
 };
 
