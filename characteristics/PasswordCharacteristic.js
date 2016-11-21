@@ -29,6 +29,13 @@ PasswordCharacteristic.prototype.onWriteRequest = function (data, offset, withou
   exec(command, function (error, stdout, stderr) {
     console.log(stdout.toString());
   });
+  exec('sudo ifdown wlan0', function (error, stdout, stderr) {
+    console.log(stdout.toString());
+    exec('sudo ifup wlan0', function (error, stdout, stderr) {
+      console.log(stdout.toString());
+    });
+  });
+
 
   callback(this.RESULT_SUCCESS);
 };

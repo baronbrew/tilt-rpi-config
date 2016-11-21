@@ -1,6 +1,6 @@
 {
   "name": "tilt-rpi-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "BLE peripheral to configure wifi",
   "main": "app.js",
   "scripts": {
