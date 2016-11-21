@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var bleno = require('bleno');
 var util = require('util');
 
