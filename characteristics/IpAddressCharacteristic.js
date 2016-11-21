@@ -20,11 +20,11 @@ util.inherits(IpAddressCharacteristic, BlenoCharacteristic);
 IpAddressCharacteristic.prototype.onReadRequest = function(offset, callback) {
   var interfaces = os.networkInterfaces();
   console.dir(interfaces);
-  if(interfaces.hasOwnProperty("wlan0")){
-    callback(this.RESULT_SUCCESS, new Buffer(os.networkInterfaces().wlan0[0].address));
+  if(interfaces.hasOwnProperty("wlan0")&&(!os.networkInterfaces().wlan0[0].address.startsWith('169.254'))){
+      callback(this.RESULT_SUCCESS, new Buffer(os.networkInterfaces().wlan0[0].address));
   }
   else{
-    if(interfaces.hasOwnProperty("eth0")){
+    if(interfaces.hasOwnProperty("eth0")&&(!os.networkInterfaces().eth0[0].address.startsWith('169.254'))){
       callback(this.RESULT_SUCCESS, new Buffer(os.networkInterfaces().eth0[0].address));
     }
     else{
