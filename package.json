@@ -1,6 +1,6 @@
 {
   "name": "tilt-rpi-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BLE peripheral to configure wifi",
   "main": "app.js",
   "scripts": {
@@ -9,13 +9,23 @@
     "type": "git",
     "url": "git+https://github.com/baronbrew/tilt-rpi-config.git"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/baronbrew/tilt-rpi-config/issues"
-  },
-  "homepage": "https://github.com/baronbrew/tilt-rpi-config#readme",
   "dependencies": {
     "bleno": "^0.4.1"
-  }
+  },
+  "bin": {
+    "tilt-rpi-config": "tilt-rpi-config.js"
+  },
+  "keywords": [
+    "tilt",
+    "brew",
+    "beer",
+    "hydrometer",
+    "fermentation"
+  ],
+  "author": "Tyler Bryant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tbryant/tilt-rpi-config/issues"
+  },
+  "homepage": "https://github.com/tbryant/tilt-rpi-config#readme"
 }
