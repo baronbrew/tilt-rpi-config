@@ -1,0 +1,21 @@
+{
+  "name": "tilt-rpi-config",
+  "version": "1.0.0",
+  "description": "BLE peripheral to configure wifi",
+  "main": "app.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baronbrew/tilt-rpi-config.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baronbrew/tilt-rpi-config/issues"
+  },
+  "homepage": "https://github.com/baronbrew/tilt-rpi-config#readme",
+  "dependencies": {
+    "bleno": "^0.4.1"
+  }
+}
